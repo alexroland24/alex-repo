@@ -1,3 +1,21 @@
 <body>
-  <h1>Hello World</h1>
-</body>  
+  <h1>My favorite colors</h1>
+  
+  {{> color_list}}
+</body>
+
+<template name="color_list">
+  {{#each colors}}
+    <ul>
+      {{> color_info}}
+    </ul>
+  {{else}}
+    No colors yet.
+    {(/each)}
+</template>
+
+<template name="color_info">
+  <li>
+      {{name}}
+  </li>
+</template>
